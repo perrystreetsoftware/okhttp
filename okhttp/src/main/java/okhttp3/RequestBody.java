@@ -15,6 +15,8 @@
  */
 package okhttp3;
 
+import android.util.Log;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -172,5 +174,30 @@ public abstract class RequestBody {
         }
       }
     };
+  }
+
+  /** Returns a new request body that transmits the content of {@code file}. */
+  public static RequestBody create(final @Nullable byte[] bytes) {
+    if (bytes == null) throw new NullPointerException("file == null");
+    int offset = 0;
+    int size = bytes.length;
+
+    return new RequestBody() {
+      @Override public @Nullable MediaType contentType() {
+        return null;
+      }
+
+      @Override public long contentLength() {
+        return bytes.length;
+      }
+
+      @Override public void writeTo(BufferedSink sink) throws IOException {
+        sink.write(bytes, offset, size);
+      }
+    };
+  }
+
+  public boolean fuck() {
+    return true;
   }
 }

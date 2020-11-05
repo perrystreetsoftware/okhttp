@@ -16,6 +16,8 @@
  */
 package okhttp3.internal.connection;
 
+import com.android.okhttp.internal.Version;
+
 import java.io.IOException;
 import java.lang.ref.Reference;
 import java.net.ConnectException;
@@ -30,11 +32,13 @@ import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.annotation.Nullable;
 import javax.net.ssl.SSLPeerUnverifiedException;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
+
 import okhttp3.Address;
 import okhttp3.Call;
 import okhttp3.CertificatePinner;
@@ -51,7 +55,6 @@ import okhttp3.Response;
 import okhttp3.Route;
 import okhttp3.internal.Internal;
 import okhttp3.internal.Util;
-import okhttp3.internal.Version;
 import okhttp3.internal.http.ExchangeCodec;
 import okhttp3.internal.http1.Http1ExchangeCodec;
 import okhttp3.internal.http2.ConnectionShutdownException;

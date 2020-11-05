@@ -16,6 +16,8 @@
  */
 package okhttp3.internal.http;
 
+import com.android.okhttp.internal.Version;
+
 import java.io.IOException;
 import java.util.List;
 import okhttp3.Cookie;
@@ -26,7 +28,6 @@ import okhttp3.MediaType;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import okhttp3.internal.Version;
 import okio.GzipSource;
 import okio.Okio;
 
